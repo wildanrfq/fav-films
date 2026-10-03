@@ -1,0 +1,27 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs and error traces
+*.log
+error_log
+wp-content/debug.log
+
+# Temporary archives
+*.tar.gz
+*.zip
+*.bak
+
+# Cookies / Session temp files
+cookies.txt
+
+# Do NOT ignore the SQLite database so the portfolio data is plug-and-play
+!wp-content/database/.ht.sqlite
