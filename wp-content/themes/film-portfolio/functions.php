@@ -19,6 +19,13 @@ function film_portfolio_setup() {
 add_action( 'after_setup_theme', 'film_portfolio_setup' );
 
 /**
+ * Custom Document Title
+ */
+add_filter( 'pre_get_document_title', function() {
+    return 'my favorite films - @wildanrfq';
+}, 999 );
+
+/**
  * Enqueue scripts and styles
  */
 function film_portfolio_scripts() {

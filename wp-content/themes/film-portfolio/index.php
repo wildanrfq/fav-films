@@ -46,8 +46,7 @@ if ( empty( $films ) ) {
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my 4 favorite films &mdash; <?php bloginfo( 'name' ); ?></title>
-    <meta name="description" content="Koleksi kurasi 4 film favorit dengan catatan ulasan personal, rating 5/5, dan statistik tontonan.">
+    <meta name="description" content="Koleksi kurasi film favorit dengan catatan ulasan personal, rating 5/5, dan statistik tontonan.">
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
