@@ -159,7 +159,7 @@ function film_portfolio_render_meta_box( $post ) {
             <input type="text" id="film_quote" name="film_quote" value="<?php echo esc_attr( $quote ); ?>" placeholder="“Love is the one thing we're capable of perceiving that transcends dimensions of time and space.”" />
         </div>
         <div class="film-meta-field film-meta-full">
-            <label for="film_why_love">Deskripsi Kenapa Saya Suka Filmnya (Ulasan Personal):</label>
+            <label for="film_why_love">My Review (Deskripsi Ulasan Film):</label>
             <textarea id="film_why_love" name="film_why_love" rows="5" placeholder="Tulis alasan personal mendalam kenapa Anda menyukai film ini..."><?php echo esc_textarea( $why_love ); ?></textarea>
         </div>
     </div>
@@ -216,7 +216,7 @@ function film_portfolio_get_films_from_db( $limit = 4 ) {
                pm_genre.meta_value AS genre,
                pm_quote.meta_value AS quote,
                pm_poster.meta_value AS poster_url,
-               pm_why.meta_value AS why_love
+               COALESCE(NULLIF(pm_why.meta_value, ''), p.post_content) AS why_love
         FROM {$wpdb->posts} p
         LEFT JOIN {$wpdb->postmeta} pm_rating ON p.ID = pm_rating.post_id AND pm_rating.meta_key = '_film_rating'
         LEFT JOIN {$wpdb->postmeta} pm_watch ON p.ID = pm_watch.post_id AND pm_watch.meta_key = '_film_watch_count'
