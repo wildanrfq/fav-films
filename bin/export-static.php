@@ -73,10 +73,10 @@ $html = str_replace(
     $html
 );
 
-// Clean up local WP admin link in footer for public visitors
+// Remove any leftover admin quicklinks if present
 $html = preg_replace(
     '#<a href="http://127\.0\.0\.1:8000/wp-admin/[^"]*" class="admin-quicklink">.*?</a>#s',
-    '<span class="admin-quicklink" style="opacity:0.6; cursor:default;">🎬 Personal Cinema Portfolio</span>',
+    '',
     $html
 );
 

@@ -128,10 +128,10 @@ if ( empty( $films ) ) {
                             </blockquote>
                         <?php endif; ?>
 
-                        <!-- Why I Love This Film -->
+                        <!-- Review Section -->
                         <div class="film-review-section">
                             <h3 class="review-headline">
-                                <span>&#9998;</span> Kenapa Saya Suka Filmnya
+                                <span>&#9998;</span> My Review
                             </h3>
                             <p class="review-text">
                                 <?php echo esc_html( $film->why_love ); ?>
@@ -152,12 +152,8 @@ if ( empty( $films ) ) {
 
     <!-- Footer -->
     <footer class="site-footer">
-        <p>&copy; <?php echo date('Y'); ?> <strong>my 4 favorite films</strong></p>
-        <div>
-            <a href="<?php echo esc_url( admin_url( 'edit.php?post_type=favorite_film' ) ); ?>" class="admin-quicklink">
-                <span>&#9881;</span> Kelola Film
-            </a>
-        </div>
+        <p>&copy; 2026 @wildanrfq</p>
+        <p class="footer-credit">Made with WordPress</p>
     </footer>
 
 </div>

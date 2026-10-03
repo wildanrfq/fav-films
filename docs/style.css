@@ -448,7 +448,15 @@ body::before {
   padding-top: 30px;
   border-top: 1px solid var(--border-subtle);
   color: var(--text-muted);
-  font-size: 0.82rem;
+  font-size: 0.85rem;
+}
+
+.footer-credit {
+  margin-top: 6px;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  opacity: 0.7;
+  letter-spacing: 0.02em;
 }
 
 .site-footer a {
