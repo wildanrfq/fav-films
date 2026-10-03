@@ -1,0 +1,482 @@
+/*
+Theme Name: Film Portfolio
+Theme URI: https://github.com/wildanrfq/filmwp
+Author: Wildan
+Description: Bespoke personal cinema portfolio showcasing favorite films with native PHP database integration.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+Text Domain: film-portfolio
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg-darkest: #07080b;
+  --bg-surface: #0e1017;
+  --bg-card: #131620;
+  --bg-card-hover: #181d2a;
+  --bg-glass: rgba(19, 22, 32, 0.75);
+  
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-active: rgba(229, 169, 80, 0.35);
+  --border-gold: #c6923b;
+  
+  --accent-gold: #e5a950;
+  --accent-gold-hover: #f3be6d;
+  --accent-gold-soft: rgba(229, 169, 80, 0.12);
+  --accent-amber: #f59e0b;
+  --accent-red: #ef4444;
+  --accent-cyan: #38bdf8;
+  
+  --text-main: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --text-inverse: #07080b;
+  
+  --font-serif: 'Figtree', sans-serif;
+  --font-sans: 'Figtree', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+  
+  --shadow-card: 0 16px 36px -10px rgba(0, 0, 0, 0.6), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+  --shadow-glow: 0 0 35px rgba(229, 169, 80, 0.15);
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-darkest);
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(229, 169, 80, 0.08), transparent 70%),
+    radial-gradient(circle at 10% 90%, rgba(56, 189, 248, 0.03), transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.04), transparent 50%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Subtle Film Grain */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+  z-index: 999;
+}
+
+.site-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 50px 24px 80px;
+}
+
+@media (max-width: 768px) {
+  .site-container {
+    padding: 36px 16px 60px;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-container {
+    padding: 26px 12px 48px;
+  }
+}
+
+/* Header Section: Centered Title */
+.hero-header {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 48px;
+  position: relative;
+}
+
+@media (max-width: 680px) {
+  .hero-header {
+    margin-bottom: 32px;
+  }
+}
+
+/* Specific exact title requested by user */
+.main-title {
+  font-family: 'Figtree', var(--font-sans);
+  font-size: clamp(2rem, 6.5vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  margin-bottom: 0;
+  text-transform: lowercase; /* Exactly "my 4 favorite films" */
+  position: relative;
+  word-break: break-word;
+}
+
+.main-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  margin: 14px auto 0;
+}
+
+/* Film Grid */
+.films-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 980px) {
+  .films-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .films-grid {
+    gap: 20px;
+  }
+}
+
+/* Film Card */
+.film-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  gap: 26px;
+  align-items: flex-start;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+@media (max-width: 680px) {
+  .film-card {
+    flex-direction: column;
+    padding: 20px 18px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .film-card {
+    padding: 16px 14px;
+    gap: 16px;
+  }
+}
+
+.film-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-active);
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+
+/* Framed Poster Box: Nested neatly inside card */
+.poster-column {
+  flex-shrink: 0;
+  width: 195px;
+  position: relative;
+}
+
+@media (max-width: 680px) {
+  .poster-column {
+    width: 100%;
+    max-width: 210px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 380px) {
+  .poster-column {
+    max-width: 175px;
+  }
+}
+
+.poster-frame {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: #000000;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.7);
+  transition: var(--transition-smooth);
+}
+
+.film-card:hover .poster-frame {
+  border-color: var(--border-active);
+  box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.8), 0 0 15px rgba(229, 169, 80, 0.2);
+}
+
+.poster-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.film-card:hover .poster-image {
+  transform: scale(1.04);
+}
+
+
+
+/* Info Column */
+.info-column {
+  flex-grow: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.film-meta-header {
+  margin-bottom: 14px;
+}
+
+.film-year-director {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  font-family: var(--font-mono);
+}
+
+.film-year-director .bullet {
+  color: var(--accent-gold);
+}
+
+.film-title {
+  font-family: 'Figtree', var(--font-sans);
+  font-size: clamp(1.35rem, 4.5vw, 1.55rem);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+  line-height: 1.25;
+  margin-bottom: 10px;
+}
+
+.film-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.genre-tag {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+/* Key Metrics Box (Rating & Watch Count) */
+.film-metrics-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  background: rgba(7, 8, 11, 0.5);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 380px) {
+  .film-metrics-strip {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-bottom: 4px;
+}
+
+.metric-value-rating {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stars-gold {
+  letter-spacing: 2px;
+  color: var(--accent-gold);
+  font-size: 0.95rem;
+}
+
+.rating-text {
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.metric-value-watch {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.metric-value-watch .badge-count {
+  color: var(--accent-amber);
+}
+
+/* Film Quote */
+.film-quote-snippet {
+  font-style: italic;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  border-left: 2px solid var(--accent-gold);
+  padding-left: 10px;
+  margin-bottom: 16px;
+  line-height: 1.45;
+}
+
+/* Why I Love This Film (User prompt requirement) */
+.film-review-section {
+  flex-grow: 1;
+  margin-bottom: 18px;
+}
+
+.review-headline {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-gold);
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.review-text {
+  font-size: 0.88rem;
+  color: #d1d5db;
+  line-height: 1.65;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.film-card.expanded .review-text {
+  -webkit-line-clamp: unset;
+}
+
+/* Card Footer */
+.card-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+  margin-top: auto;
+}
+
+.read-more-btn {
+  background: none;
+  border: none;
+  color: var(--accent-gold);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0;
+  min-height: 40px;
+  transition: var(--transition-smooth);
+}
+
+.read-more-btn:hover {
+  color: var(--accent-gold-hover);
+  transform: translateX(2px);
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.site-footer a {
+  color: var(--accent-gold);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.admin-quicklink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+}
+
+.admin-quicklink:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-main);
+  text-decoration: none;
+}
+
