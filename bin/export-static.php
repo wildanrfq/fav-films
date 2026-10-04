@@ -80,9 +80,16 @@ $html = preg_replace(
     $html
 );
 
-// Remove local AJAX nonce and script tags if present
+// Remove local AJAX nonce, speculation rules, and discovery links
 $html = preg_replace('#<script id="film-portfolio-script-js-extra">.*?</script>#s', '', $html);
 $html = preg_replace('#<script type="speculationrules">.*?</script>#s', '', $html);
+$html = preg_replace('#<link rel="https://api\.w\.org/"[^>]*>#', '', $html);
+$html = preg_replace('#<link rel="EditURI"[^>]*>#', '', $html);
+$html = preg_replace('#<script id="wp-emoji-settings"[^>]*>.*?</script>#s', '', $html);
+$html = preg_replace('#<script type="module">.*?wpEmojiSettingsSupports.*?</script>#s', '', $html);
+
+// Remove any remaining http://127.0.0.1:8000 references
+$html = str_replace('http://127.0.0.1:8000', '', $html);
 
 // Ensure proper relative base
 file_put_contents($docsDir . '/index.html', $html);

@@ -3,8 +3,8 @@
  * Database Seeder for 4 Favorite Films
  * Inserts / updates the 4 curated films into the WordPress database:
  * 1. Drive My Car (2021)
- * 2. Bound (1996)
- * 3. Aftersun (2022)
+ * 2. Aftersun (2022)
+ * 3. Like Father, Like Son (2013)
  * 4. A Separation (2011)
  */
 
@@ -24,23 +24,11 @@ $films = array(
         'director'    => 'Ryusuke Hamaguchi',
         'genre'       => 'Drama / Mystery',
         'rating'      => '5/5',
-        'watch_count' => 5,
+        'watch_count' => 2,
         'quote'       => "Those who survive keep thinking about the dead. In one way or another, that will continue. You and I must keep on living like that.",
         'poster'      => '/wp-content/themes/film-portfolio/assets/posters/drive-my-car.jpg',
-        'why_love'    => "Hamaguchi menciptakan meditasi tiga jam yang begitu hening namun menghantam sanubari tentang duka, rasa bersalah, dan ketidakmungkinan memahami orang yang paling kita cintai secara utuh. Melalui ritme perjalanan mobil Saab 900 merah menyusuri Hiroshima dan latihan teater multibahasa 'Paman Vanya', film ini menunjukkan bahwa percakapan paling jujur sering kali terjadi saat kita memandang lurus ke jalanan aspal, bukan ke mata lawan bicara. Sekuens pelukan di tengah hamparan salju Hokkaido antara Kafuku dan Watari adalah salah satu momen katarsis terindah dalam sejarah sinema modern.",
+        'why_love'    => "Film ini adalah awal mula saya mengenal karya Hamaguchi. Tanpa disangka, datang ke bioskop di akhir pekan pada pukul setengah 11 pagi dalam keadaan tidak mengetahui apa apa tentang film ini adalah keputusan terbaik saya yang membuat ini adalah film favorit saya sepanjang masa. Film yang berdurasi 3 jam ini menceritakan tentang duka, penyesalan, dan hidup secara umum. Terkadang hidup berjalan tidak sesuai dengan apa yang kita harapkan, tetapi kita hanya punya 1 cara untuk melewati itu: jalani. Percakapan panjang di mobil Saab merah yang membawa kita ke banyak tempat di Jepang membuat saya merasakan atmosfer dan suasana yang disuguhkan oleh Hamaguchi di film ini.",
         'order'       => 1,
-    ),
-    array(
-        'title'       => 'Like Father, Like Son',
-        'year'        => '2013',
-        'director'    => 'Hirokazu Kore-eda',
-        'genre'       => 'Drama / Family',
-        'rating'      => '5/5',
-        'watch_count' => 6,
-        'quote'       => "No one else can do the job of a father except you.",
-        'poster'      => '/wp-content/themes/film-portfolio/assets/posters/like-father-like-son.jpg',
-        'why_love'    => "Kore-eda memiliki kepekaan luar biasa dalam membedah kerapuhan institusi keluarga tanpa sedikit pun terjebak dalam melodrama murahan. Premis tentang dua anak yang tertukar saat lahir di rumah sakit ditransformasikan menjadi perenungan eksistensial yang tenang namun menyayat hati: apakah seorang ayah ditentukan oleh ikatan genetika, atau oleh akumulasi waktu, sentuhan, dan kebersamaan sehari-hari? Adegan ketika Ryota tanpa sengaja melihat foto-foto dirinya yang sedang tertidur di dalam kamera digital sang anak adalah salah satu momen paling sunyi dan menghancurkan dalam sejarah sinema kontemporer—sebuah pukulan telak yang menyadarkan bahwa cinta anak tidak menuntut kesempurnaan, melainkan kehadiran yang tulus.",
-        'order'       => 2,
     ),
     array(
         'title'       => 'Aftersun',
@@ -48,10 +36,22 @@ $films = array(
         'director'    => 'Charlotte Wells',
         'genre'       => 'Drama',
         'rating'      => '5/5',
-        'watch_count' => 6,
+        'watch_count' => 3,
         'quote'       => "There's this feeling, once you leave where you're from... like you don't quite belong there anymore. But you don't belong anywhere else, either.",
         'poster'      => '/wp-content/themes/film-portfolio/assets/posters/aftersun.jpg',
-        'why_love'    => "Aftersun adalah lukisan duka dan ingatan yang menghancurkan hati justru karena ia menolak untuk menjadi melodramatis. Melalui fragmen rekaman MiniDV liburan musim panas di Turki, kita menyaksikan seorang anak perempuan yang kini telah dewasa berusaha merekonstruksi sosok ayahnya yang tenggelam dalam depresi terselubung. Penggunaan lagu 'Under Pressure' di lantai dansa stroboskopik adalah salah satu penyuntingan paling emosional yang pernah dibuat—sebuah pelukan perpisahan tanpa suara di ambang pintu memori yang tak akan pernah bisa dibuka kembali.",
+        'why_love'    => "Aftersun adalah film yang membawa kita ke dalam memori seorang anak bernama Sophie dan ayahnya. Berada di saat musim panas di Turki, Sophie dan ayahnya menghabiskan waktu untuk bersenang-senang, melakukan hal-hal layaknya seorang ayah dan anak perempuannya. Tetapi, ada hal yang menusuk hati. Secara tidak langsung, sang ayah menunjukkan bahwa ia sedang mengalami depresi. Film ini menunjukkan seorang ayah yang murah senyum di depan anaknya, tetapi disaat yang bersamaan juga mempunyai hal yang mengganggu dirinya.",
+        'order'       => 2,
+    ),
+    array(
+        'title'       => 'Like Father, Like Son',
+        'year'        => '2013',
+        'director'    => 'Hirokazu Kore-eda',
+        'genre'       => 'Drama / Family',
+        'rating'      => '5/5',
+        'watch_count' => 1,
+        'quote'       => "No one else can do the job of a father except you.",
+        'poster'      => '/wp-content/themes/film-portfolio/assets/posters/like-father-like-son.jpg',
+        'why_love'    => "Like Father, Like Son adalah film yang mempunyai premis yang cukup simpel, namun unik. Film ini menceritakan tentang sudut pandang dua keluarga yang mengalami insiden tidak terduga, yaitu anak mereka tertukar dengan satu sama lain. Dua keluarga ini mulai dites, bagaimana mereka menghadapi situasi ini. Mereka sudah melakukan yang terbaik selama mengasuh anak mereka. Berat, tetapi mereka harus mencoba ikhlas dan mulai beradaptasi lagi dengan anak mereka yang asli. Cobaan demi cobaan, Kore-eda mampu menggambarkan cara mereka menghadapi situasi ini dengan sangat baik. Adegan dimana Ryota, sang bapak, berbicara dengan anak dia yang tertukar dengan pemandangan suatu sungai tempat mereka piknik adalah salah satu adegan favorit saya sepanjang masa.",
         'order'       => 3,
     ),
     array(
@@ -60,10 +60,10 @@ $films = array(
         'director'    => 'Asghar Farhadi',
         'genre'       => 'Drama / Psychological / Mystery',
         'rating'      => '5/5',
-        'watch_count' => 5,
+        'watch_count' => 2,
         'quote'       => "What is wrong is wrong, no matter who said it or where it's written.",
         'poster'      => '/wp-content/themes/film-portfolio/assets/posters/a-separation.jpg',
-        'why_love'    => "Farhadi merancang skenario paling kedap cela dalam sinema abad ke-21. Berawal dari gugatan cerai pasangan di Teheran, perselisihan berkembang menjadi labirin moral, etika agama, dan benturan kelas sosial di mana penonton dibuat mustahil menyalahkan salah satu pihak. Setiap karakter memiliki alasan yang sah dan sangat manusiawi atas tindakan mereka, namun kebanggaan dan tekanan peradilan justru memperparah luka. Adegan akhir di koridor pengadilan yang sunyi meninggalkan dilema etis yang terus menghantui pikiran lama setelah layar menghitam.",
+        'why_love'    => "Farhadi, salah satu figur penting di sejarah sinema modern di negara Iran, membuat satu film yang membahas mengenai pasangan suami istri yang sedang mengalami perceraian. Ditengah pertikaian mereka, sang suami juga harus mengurus ayahnya yang mengidap penyakit Alzheimer. Mereka juga mempunyai anak yang menunjukkan rasa ketidaknyamanannya berada di suatu lingkungan yang rumit. Film ini sangat menggambarkan ketakutan saya, yaitu gagal membangun rumah tangga yang harmonis.",
         'order'       => 4,
     ),
 );

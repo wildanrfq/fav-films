@@ -37,3 +37,6 @@ update_option( 'posts_per_page', 10 );
 update_option( 'permalink_structure', '/%postname%/' );
 
 echo "Active theme set to 'film-portfolio'.\n";
+
+// Seed films database automatically
+require_once __DIR__ . '/seed-films.php';

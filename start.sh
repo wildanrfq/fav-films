@@ -22,5 +22,5 @@ echo "--------------------------------------------------"
 echo "Tekan CTRL + C untuk menghentikan server."
 echo "=================================================="
 
-# Jalankan PHP built-in server dengan router
-php -S 127.0.0.1:8000 router.php
+# Jalankan PHP built-in server dengan multi-worker pool agar tidak freeze saat concurrent requests
+PHP_CLI_SERVER_WORKERS=4 php -S 127.0.0.1:8000 router.php

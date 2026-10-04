@@ -192,6 +192,49 @@ body::before {
   box-shadow: var(--shadow-card), var(--shadow-glow);
 }
 
+/* Rank Badge (#1, #2, etc.) in Top-Right Corner */
+.film-rank-badge {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--accent-gold);
+  background: rgba(229, 169, 80, 0.09);
+  border: 1px solid rgba(229, 169, 80, 0.28);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+  z-index: 5;
+  transition: var(--transition-smooth);
+  user-select: none;
+}
+
+.film-card:hover .film-rank-badge {
+  color: #ffffff;
+  background: rgba(229, 169, 80, 0.22);
+  border-color: var(--accent-gold);
+  box-shadow: 0 0 16px rgba(229, 169, 80, 0.4);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 680px) {
+  .film-rank-badge {
+    top: 16px;
+    right: 16px;
+    font-size: 0.8rem;
+    padding: 3px 10px;
+  }
+}
+
 /* Framed Poster Box: Nested neatly inside card */
 .poster-column {
   flex-shrink: 0;
@@ -255,6 +298,7 @@ body::before {
 
 .film-meta-header {
   margin-bottom: 14px;
+  padding-right: 65px;
 }
 
 .film-year-director {

@@ -47,6 +47,7 @@ if ( empty( $films ) ) {
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Koleksi kurasi film favorit dengan catatan ulasan personal, rating 5/5, dan statistik tontonan.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -63,15 +64,24 @@ if ( empty( $films ) ) {
         <?php if ( ! empty( $films ) ) : ?>
             <?php foreach ( $films as $index => $film ) : 
                 $rank = $index + 1;
-                $genres = array_filter( array_map( 'trim', explode( '/', $film->genre ) ) );
+                $genre_str = ! empty( $film->genre ) ? (string) $film->genre : '';
+                $genres = array_filter( array_map( 'trim', explode( '/', $genre_str ) ) );
                 $poster_url = ! empty( $film->poster_url ) ? $film->poster_url : get_template_directory_uri() . '/assets/posters/drive-my-car.jpg';
                 $rating_val = ! empty( $film->rating ) ? $film->rating : '5/5';
+                $numeric_rating = floatval( str_replace( '/5', '', $rating_val ) );
+                $watch_val = ! empty( $film->watch_count ) ? intval( $film->watch_count ) : 1;
             ?>
                 <article 
                     class="film-card" 
                     id="film-<?php echo esc_attr( $film->ID ); ?>"
+                    data-order="<?php echo esc_attr( $index ); ?>"
+                    data-rating="<?php echo esc_attr( $numeric_rating ); ?>"
+                    data-watch="<?php echo esc_attr( $watch_val ); ?>"
                 >
-                    <!-- Framed Poster Box: Inside the card with dedicated border & padding (no number overlay) -->
+                    <!-- Rank Indicator in Top-Right Corner (#1, #2, etc.) -->
+                    <div class="film-rank-badge">#<?php echo esc_html( $rank ); ?></div>
+
+                    <!-- Framed Poster Box: Inside the card with dedicated border & padding -->
                     <div class="poster-column">
                         <div class="poster-frame">
                             <img 

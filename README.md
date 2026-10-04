@@ -9,10 +9,10 @@ Website portfolio sinematik personal berbasis **WordPress & Static Export Ready*
 1. **Judul Utama di Tengah Atas**:
    - Menampilkan tulisan **`my 4 favorite films`** secara proporsional dan elegan di bagian atas layar.
 2. **4 Film Favorit Terkurasi**:
-   - **Drive My Car (2021)** &bull; Dir. Ryusuke Hamaguchi &bull; Rating: **`★★★★★ 5/5`** &bull; Ditonton: **`5x`**
-   - **Like Father, Like Son (2013)** &bull; Dir. Hirokazu Kore-eda &bull; Rating: **`★★★★★ 5/5`** &bull; Ditonton: **`6x`**
-   - **Aftersun (2022)** &bull; Dir. Charlotte Wells &bull; Rating: **`★★★★★ 5/5`** &bull; Ditonton: **`6x`**
-   - **A Separation (2011)** &bull; Dir. Asghar Farhadi &bull; Rating: **`★★★★★ 5/5`** &bull; Ditonton: **`5x`**
+   - **Drive My Car (2021)** &bull; Dir. Ryusuke Hamaguchi &bull; Rating: **`★★★★★ 5/5`** &bull; Ditonton: **`2x`**
+   - **Aftersun (2022)** &bull; Dir. Charlotte Wells &bull; Rating: **`★★★★★ 5/5`** &bull; Ditonton: **`3x`**
+   - **Like Father, Like Son (2013)** &bull; Dir. Hirokazu Kore-eda &bull; Rating: **`★★★★★ 5/5`** &bull; Ditonton: **`1x`**
+   - **A Separation (2011)** &bull; Dir. Asghar Farhadi &bull; Rating: **`★★★★★ 5/5`** &bull; Ditonton: **`2x`**
 3. **Desain & Tipografi**:
    - Tipografi **Figtree** yang bersih dan elegan di seluruh elemen halaman.
    - Poster teatrikal asli dalam rasio 2:3 dengan frame berbingkai di dalam card.
