@@ -128,7 +128,7 @@ if ( empty( $films ) ) {
                         <!-- Key Metrics: Rating Stars & Watch Count -->
                         <div class="film-metrics-strip">
                             <div class="metric-rating">
-                                <span class="stars-gold" title="Rating: <?php echo esc_attr( $rating_val ); ?>">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                                <span class="stars-green" title="Rating: <?php echo esc_attr( $rating_val ); ?>">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                             </div>
                             <div class="metric-watch" title="Ditonton <?php echo esc_attr( $film->watch_count ); ?> kali">
                                 <svg class="watch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true">
