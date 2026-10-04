@@ -58,8 +58,8 @@ if ( empty( $films ) ) {
     <header class="hero-header">
         <h1 class="main-title">my 4 favorite films</h1>
         <div class="hero-subtitle">
-            <a href="https://letterboxd.com/wildanrfq/" target="_blank" rel="noopener noreferrer" class="letterboxd-badge" title="Visit wildanrfq on Letterboxd">
-                <svg class="letterboxd-logo" viewBox="0 0 98 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Letterboxd logo">
+            <a href="https://letterboxd.com/wildanrfq/" target="_blank" rel="noopener noreferrer" class="letterboxd-badge" title="Visit wildanrfq on Letterboxd" style="display: inline-flex; align-items: center; gap: 8px;">
+                <svg class="letterboxd-logo" width="22" height="8" viewBox="0 0 98 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Letterboxd logo" style="width: 22px; height: 8px; max-width: 22px; max-height: 8px; vertical-align: middle; display: inline-block; flex-shrink: 0;">
                     <ellipse fill="#40BCF4" cx="79.21" cy="18" rx="18.03" ry="18"></ellipse>
                     <ellipse fill="#00E054" cx="48.62" cy="18" rx="18.03" ry="18"></ellipse>
                     <ellipse fill="#FF8000" cx="18.03" cy="18" rx="18.03" ry="18"></ellipse>

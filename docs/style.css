@@ -147,7 +147,9 @@ body::before {
 
 .letterboxd-badge {
   display: inline-flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 5px 14px 5px 12px;
   background: rgba(255, 255, 255, 0.03);
@@ -163,9 +165,12 @@ body::before {
 }
 
 .letterboxd-logo {
-  width: 24px;
-  height: 9px;
-  display: block;
+  width: 20px;
+  height: 8px;
+  max-width: 20px;
+  max-height: 8px;
+  display: inline-block;
+  vertical-align: middle;
   flex-shrink: 0;
   transition: transform 0.3s ease;
 }

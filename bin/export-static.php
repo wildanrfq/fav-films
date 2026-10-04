@@ -37,27 +37,28 @@ if (!$html) {
 }
 
 echo "5. Optimizing HTML for static hosting (GitHub Pages & Vercel)...\n";
-// Adjust CSS paths to relative
+// Adjust CSS paths to relative with cache-busting timestamp
+$assetVer = time();
 $html = preg_replace(
-    '#http://127\.0\.0\.1:8000/wp-content/themes/film-portfolio/style\.css\?ver=[0-9\.]*#',
-    './style.css',
+    '#http://127\.0\.0\.1:8000/wp-content/themes/film-portfolio/style\.css(\?ver=[0-9\.]*)?#',
+    './style.css?v=' . $assetVer,
     $html
 );
 $html = str_replace(
     '/wp-content/themes/film-portfolio/style.css',
-    './style.css',
+    './style.css?v=' . $assetVer,
     $html
 );
 
-// Adjust JS paths to relative
+// Adjust JS paths to relative with cache-busting timestamp
 $html = preg_replace(
-    '#http://127\.0\.0\.1:8000/wp-content/themes/film-portfolio/assets/js/main\.js\?ver=[0-9\.]*#',
-    './assets/js/main.js',
+    '#http://127\.0\.0\.1:8000/wp-content/themes/film-portfolio/assets/js/main\.js(\?ver=[0-9\.]*)?#',
+    './assets/js/main.js?v=' . $assetVer,
     $html
 );
 $html = str_replace(
     '/wp-content/themes/film-portfolio/assets/js/main.js',
-    './assets/js/main.js',
+    './assets/js/main.js?v=' . $assetVer,
     $html
 );
 
