@@ -27,7 +27,7 @@ $films = array(
         'watch_count' => 2,
         'quote'       => "Those who survive keep thinking about the dead. In one way or another, that will continue. You and I must keep on living like that.",
         'poster'      => '/wp-content/themes/film-portfolio/assets/posters/drive-my-car.jpg',
-        'why_love'    => "Film ini adalah awal mula saya mengenal karya Hamaguchi. Tanpa disangka, datang ke bioskop di akhir pekan pada pukul setengah 11 pagi dalam keadaan tidak mengetahui apa apa tentang film ini adalah keputusan terbaik saya yang membuat ini adalah film favorit saya sepanjang masa. Film yang berdurasi 3 jam ini menceritakan tentang duka, penyesalan, dan hidup secara umum. Terkadang hidup berjalan tidak sesuai dengan apa yang kita harapkan, tetapi kita hanya punya 1 cara untuk melewati itu: jalani. Percakapan panjang di mobil Saab merah yang membawa kita ke banyak tempat di Jepang membuat saya merasakan atmosfer dan suasana yang disuguhkan oleh Hamaguchi di film ini.",
+        'why_love'    => "This film marked the beginning of my journey into Hamaguchi's work. Walking into the cinema on a weekend morning at 10:30 AM knowing virtually nothing about it turned out to be the best decision I ever made, cementing this as my all-time favorite film. Spanning three hours, the film delves into grief, regret, and life itself. Sometimes life doesn't turn out the way we hope, but there is only one way through it: to live it. The long, intimate conversations inside the red Saab 900 traveling across various corners of Japan truly immersed me in the serene, evocative atmosphere Hamaguchi crafted so masterfully.",
         'order'       => 1,
     ),
     array(
@@ -39,7 +39,7 @@ $films = array(
         'watch_count' => 3,
         'quote'       => "There's this feeling, once you leave where you're from... like you don't quite belong there anymore. But you don't belong anywhere else, either.",
         'poster'      => '/wp-content/themes/film-portfolio/assets/posters/aftersun.jpg',
-        'why_love'    => "Aftersun adalah film yang membawa kita ke dalam memori seorang anak bernama Sophie dan ayahnya. Berada di saat musim panas di Turki, Sophie dan ayahnya menghabiskan waktu untuk bersenang-senang, melakukan hal-hal layaknya seorang ayah dan anak perempuannya. Tetapi, ada hal yang menusuk hati. Secara tidak langsung, sang ayah menunjukkan bahwa ia sedang mengalami depresi. Film ini menunjukkan seorang ayah yang murah senyum di depan anaknya, tetapi disaat yang bersamaan juga mempunyai hal yang mengganggu dirinya.",
+        'why_love'    => "Aftersun immerses us into the lingering memories of a young girl named Sophie and her father. Set during a summer holiday in Turkey, Sophie and her dad spend their time having fun, sharing the tender moments typical between a father and his daughter. Yet beneath the surface lies something truly heartbreaking. Subtly and quietly, the father reveals glimpses of the deep depression he is grappling with. The film portrays a father who keeps smiling warmly in front of his child, even while carrying a heavy internal turmoil within.",
         'order'       => 2,
     ),
     array(
@@ -51,7 +51,7 @@ $films = array(
         'watch_count' => 1,
         'quote'       => "No one else can do the job of a father except you.",
         'poster'      => '/wp-content/themes/film-portfolio/assets/posters/like-father-like-son.jpg',
-        'why_love'    => "Like Father, Like Son adalah film yang mempunyai premis yang cukup simpel, namun unik. Film ini menceritakan tentang sudut pandang dua keluarga yang mengalami insiden tidak terduga, yaitu anak mereka tertukar dengan satu sama lain. Dua keluarga ini mulai dites, bagaimana mereka menghadapi situasi ini. Mereka sudah melakukan yang terbaik selama mengasuh anak mereka. Berat, tetapi mereka harus mencoba ikhlas dan mulai beradaptasi lagi dengan anak mereka yang asli. Cobaan demi cobaan, Kore-eda mampu menggambarkan cara mereka menghadapi situasi ini dengan sangat baik. Adegan dimana Ryota, sang bapak, berbicara dengan anak dia yang tertukar dengan pemandangan suatu sungai tempat mereka piknik adalah salah satu adegan favorit saya sepanjang masa.",
+        'why_love'    => "Like Father, Like Son carries a relatively simple yet profoundly unique premise. The film explores the perspectives of two families grappling with an unexpected incident: discovering their sons were switched at birth. Both families are pushed to their limits as they navigate this painful reality. Having poured so much love and care into raising their children, they face the agonizing process of letting go and trying to adapt to their biological sons. Through trial after trial, Kore-eda captures their emotional struggle with extraordinary grace and sensitivity. The scene where Ryota, the father, talks with his non-biological son by the riverside during a picnic remains one of my absolute favorite cinematic moments of all time.",
         'order'       => 3,
     ),
     array(
@@ -63,7 +63,7 @@ $films = array(
         'watch_count' => 2,
         'quote'       => "What is wrong is wrong, no matter who said it or where it's written.",
         'poster'      => '/wp-content/themes/film-portfolio/assets/posters/a-separation.jpg',
-        'why_love'    => "Farhadi, salah satu figur penting di sejarah sinema modern di negara Iran, membuat satu film yang membahas mengenai pasangan suami istri yang sedang mengalami perceraian. Ditengah pertikaian mereka, sang suami juga harus mengurus ayahnya yang mengidap penyakit Alzheimer. Mereka juga mempunyai anak yang menunjukkan rasa ketidaknyamanannya berada di suatu lingkungan yang rumit. Film ini sangat menggambarkan ketakutan saya, yaitu gagal membangun rumah tangga yang harmonis.",
+        'why_love'    => "Farhadi, one of the most prominent figures in modern Iranian cinema, crafts a compelling story centered around a married couple going through a divorce. In the midst of their escalating conflict, the husband must also care for his elderly father suffering from Alzheimer's disease. Meanwhile, their young daughter is caught in between, visibly uncomfortable navigating such a complicated and fraught environment. This film deeply captures one of my greatest personal fears: the failure to build and sustain a harmonious family.",
         'order'       => 4,
     ),
 );

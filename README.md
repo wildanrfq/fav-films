@@ -16,7 +16,7 @@ Website portfolio sinematik personal berbasis **WordPress & Static Export Ready*
 3. **Desain & Tipografi**:
    - Tipografi **Figtree** yang bersih dan elegan di seluruh elemen halaman.
    - Poster teatrikal asli dalam rasio 2:3 dengan frame berbingkai di dalam card.
-   - Ulasan interaktif yang dapat diperluas (*Baca Ulasan Lengkap / Tutup Ulasan*).
+   - Ulasan interaktif yang dapat diperluas (*Read Full Review / Close Review*).
    - Sepenuhnya responsif untuk smartphone, tablet, dan desktop.
 4. **Deployable Anywhere**:
    - Dapat di-host langsung di **GitHub Pages** atau **Vercel** tanpa memerlukan server PHP online atau kartu kredit.

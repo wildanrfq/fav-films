@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const isExpanded = card.classList.toggle('expanded');
       const textSpan = this.querySelector('span');
       if (textSpan) {
-        textSpan.textContent = isExpanded ? 'Tutup Ulasan' : 'Baca Ulasan Lengkap';
+        textSpan.textContent = isExpanded ? 'Close Review' : 'Read Full Review';
       }
     });
   });

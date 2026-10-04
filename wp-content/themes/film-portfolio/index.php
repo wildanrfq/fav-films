@@ -46,7 +46,7 @@ if ( empty( $films ) ) {
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Koleksi kurasi film favorit dengan catatan ulasan personal, rating 5/5, dan statistik tontonan.">
+    <meta name="description" content="A curated collection of favorite films featuring personal reviews, 5/5 ratings, and watch statistics.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
     <?php wp_head(); ?>
 </head>
@@ -130,7 +130,7 @@ if ( empty( $films ) ) {
                             <div class="metric-rating">
                                 <span class="stars-green" title="Rating: <?php echo esc_attr( $rating_val ); ?>">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                             </div>
-                            <div class="metric-watch" title="Ditonton <?php echo esc_attr( $film->watch_count ); ?> kali">
+                            <div class="metric-watch" title="Watched <?php echo esc_attr( $film->watch_count ); ?> times">
                                 <svg class="watch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true">
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                     <circle cx="12" cy="12" r="3"></circle>
@@ -156,7 +156,7 @@ if ( empty( $films ) ) {
                         <!-- Card Footer -->
                         <div class="card-footer">
                             <button class="read-more-btn" type="button">
-                                <span>Baca Ulasan Lengkap</span> &rarr;
+                                <span>Read Full Review</span> &rarr;
                             </button>
                         </div>
                     </div>
