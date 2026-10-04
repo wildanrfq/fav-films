@@ -61,4 +61,18 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 150);
     });
   });
+
+  // Mobile Sticky Header scrolled effect
+  const heroHeader = document.querySelector('.hero-header');
+  if (heroHeader) {
+    const handleHeaderScroll = () => {
+      if (window.scrollY > 15) {
+        heroHeader.classList.add('is-scrolled');
+      } else {
+        heroHeader.classList.remove('is-scrolled');
+      }
+    };
+    window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+    handleHeaderScroll();
+  }
 });
