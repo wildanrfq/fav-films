@@ -411,72 +411,63 @@ body::before {
   border-radius: var(--radius-sm);
 }
 
-/* Key Metrics Box (Rating & Watch Count) */
+/* Key Metrics Box (Rating Stars & Watch Count) */
 .film-metrics-strip {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  background: rgba(7, 8, 11, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(7, 8, 11, 0.55);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
-  padding: 12px 14px;
+  padding: 8px 14px;
   margin-bottom: 18px;
+  gap: 12px;
 }
 
-@media (max-width: 380px) {
-  .film-metrics-strip {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-}
-
-.metric-item {
-  display: flex;
-  flex-direction: column;
-}
-
-.metric-label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  margin-bottom: 4px;
-}
-
-.metric-value-rating {
-  font-family: var(--font-sans);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--accent-gold);
+.metric-rating {
   display: flex;
   align-items: center;
-  gap: 8px;
 }
 
 .stars-gold {
   letter-spacing: 2px;
   color: var(--accent-gold);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(229, 169, 80, 0.35);
+  user-select: none;
 }
 
-.rating-text {
-  font-weight: 800;
-  color: #ffffff;
-}
-
-.metric-value-watch {
-  font-family: var(--font-mono);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--text-main);
-  display: flex;
+.metric-watch {
+  display: inline-flex;
   align-items: center;
   gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent-amber);
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.22);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  line-height: 1;
 }
 
-.metric-value-watch .badge-count {
+.metric-watch .watch-icon {
+  width: 15px;
+  height: 15px;
+  stroke: var(--accent-amber);
+  opacity: 0.95;
+  flex-shrink: 0;
+  display: block;
+}
+
+.metric-watch .badge-count {
   color: var(--accent-amber);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.92rem;
+  letter-spacing: -0.01em;
 }
 
 /* Film Quote */

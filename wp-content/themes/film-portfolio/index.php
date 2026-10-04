@@ -125,20 +125,17 @@ if ( empty( $films ) ) {
                             <?php endif; ?>
                         </div>
 
-                        <!-- Key Metrics: 5/5 Rating & Watch Count -->
+                        <!-- Key Metrics: Rating Stars & Watch Count -->
                         <div class="film-metrics-strip">
-                            <div class="metric-item">
-                                <span class="metric-label">Rating Saya</span>
-                                <div class="metric-value-rating">
-                                    <span class="stars-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-                                    <span class="rating-text"><?php echo esc_html( $rating_val ); ?></span>
-                                </div>
+                            <div class="metric-rating">
+                                <span class="stars-gold" title="Rating: <?php echo esc_attr( $rating_val ); ?>">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                             </div>
-                            <div class="metric-item">
-                                <span class="metric-label">Sudah Ditonton</span>
-                                <div class="metric-value-watch">
-                                    <span class="badge-count"><?php echo esc_html( $film->watch_count ); ?>x</span>
-                                </div>
+                            <div class="metric-watch" title="Ditonton <?php echo esc_attr( $film->watch_count ); ?> kali">
+                                <svg class="watch-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                <span class="badge-count"><?php echo esc_html( $film->watch_count ); ?>x</span>
                             </div>
                         </div>
 
