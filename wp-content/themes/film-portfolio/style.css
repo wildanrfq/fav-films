@@ -57,10 +57,6 @@ Text Domain: film-portfolio
   padding: 0;
 }
 
-html {
-  overflow-x: clip;
-}
-
 body {
   background-color: var(--bg-darkest);
   background-image: 
@@ -74,7 +70,6 @@ body {
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   position: relative;
-  overflow-x: clip;
 }
 
 /* Subtle Film Grain */
@@ -96,106 +91,12 @@ body::before {
   padding: 50px 24px 80px;
 }
 
-@media (max-width: 768px) {
-  .site-container {
-    padding: 0 16px 60px;
-  }
-}
-
-@media (max-width: 380px) {
-  .site-container {
-    padding: 0 12px 48px;
-  }
-}
-
 /* Header Section: Centered Title */
 .hero-header {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 48px;
   position: relative;
-  transition: padding 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
-}
-
-@media (max-width: 768px) {
-  .hero-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(7, 8, 11, 0.82);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    margin-top: 0;
-    margin-left: -16px;
-    margin-right: -16px;
-    padding: 16px 16px 14px;
-    margin-bottom: 24px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-  }
-
-  .hero-header.is-scrolled {
-    padding: 10px 16px 10px;
-    background: rgba(7, 8, 11, 0.94);
-    border-bottom-color: rgba(0, 224, 84, 0.25);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 1px 0 rgba(0, 224, 84, 0.2);
-  }
-
-  .main-title {
-    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
-    line-height: 1.15;
-    transition: font-size 0.25s ease;
-  }
-
-  .hero-header.is-scrolled .main-title {
-    font-size: clamp(1.2rem, 4.8vw, 1.45rem);
-  }
-
-  .main-title::after {
-    margin: 8px auto 0;
-    width: 36px;
-    transition: all 0.25s ease;
-  }
-
-  .hero-header.is-scrolled .main-title::after {
-    margin-top: 4px;
-    width: 24px;
-    opacity: 0.6;
-  }
-
-  .hero-subtitle {
-    margin-top: 8px;
-    transition: all 0.25s ease;
-  }
-
-  .hero-header.is-scrolled .hero-subtitle {
-    margin-top: 5px;
-  }
-
-  .letterboxd-badge {
-    padding: 3px 10px;
-    font-size: 0.76rem;
-  }
-}
-
-@media (max-width: 380px) {
-  .hero-header {
-    margin-left: -12px;
-    margin-right: -12px;
-    padding: 14px 12px 12px;
-  }
-
-  .hero-header.is-scrolled {
-    padding: 8px 12px 8px;
-  }
-
-  .main-title {
-    font-size: 1.3rem;
-  }
-
-  .hero-header.is-scrolled .main-title {
-    font-size: 1.15rem;
-  }
 }
 
 /* Specific exact title requested by user */
@@ -227,6 +128,75 @@ body::before {
   justify-content: center;
   align-items: center;
   margin-top: 14px;
+}
+
+/* Mobile Sticky Navbar Layout */
+@media (max-width: 768px) {
+  .site-container {
+    padding: 0 16px 60px;
+  }
+
+  .hero-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    margin-top: 0;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: max(14px, env(safe-area-inset-top)) 16px 12px;
+    margin-bottom: 24px;
+    background: rgba(7, 8, 11, 0.94);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  .main-title {
+    font-size: clamp(1.35rem, 5.2vw, 1.65rem);
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Hide decorative line on mobile to keep sticky bar neat and uncluttered */
+  .main-title::after {
+    display: none;
+  }
+
+  .hero-subtitle {
+    margin-top: 6px;
+  }
+
+  .letterboxd-badge {
+    padding: 3px 10px 3px 8px;
+    font-size: 0.74rem;
+    gap: 6px;
+  }
+
+  .letterboxd-logo {
+    width: 18px;
+    height: 7px;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-container {
+    padding: 0 12px 48px;
+  }
+
+  .hero-header {
+    margin-left: -12px;
+    margin-right: -12px;
+    padding: max(12px, env(safe-area-inset-top)) 12px 10px;
+    margin-bottom: 20px;
+  }
+
+  .main-title {
+    font-size: 1.25rem;
+  }
 }
 
 .letterboxd-badge {
