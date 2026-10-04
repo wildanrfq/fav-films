@@ -25,3 +25,6 @@ cookies.txt
 
 # Do NOT ignore the SQLite database so the portfolio data is plug-and-play
 !wp-content/database/.ht.sqlite
+
+# PDF documents
+*.pdf
