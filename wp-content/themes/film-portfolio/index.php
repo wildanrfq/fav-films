@@ -151,9 +151,6 @@ if ( empty( $films ) ) {
 
                         <!-- Review Section -->
                         <div class="film-review-section">
-                            <h3 class="review-headline">
-                                <span>&#9998;</span> My Review
-                            </h3>
                             <p class="review-text">
                                 <?php echo esc_html( $film->why_love ); ?>
                             </p>
